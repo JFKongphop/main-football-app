@@ -10,7 +10,7 @@ const SharedLayout = () =>{
             <StyledNavbar/>
 
             {/* Outlet to call home page */}
-            <Outlet/>
+            <Outlet className="outlet"/>
         </div>
     )
 }

@@ -3,30 +3,57 @@ import { NavLink } from "react-router-dom";
 const StyledNavbar = () =>{
     const pages = ["About", "Products", "Service", "Login"];
 
-    const eachNavLink = pages.map((page, index)=>{
-            return <NavLink 
-                        key={index} 
-                        to={page} 
-                        className={({ isActive }) => (isActive ? "link active" : "link")}
-                        >
-                            {page}
-                    </NavLink>
-    })
+    // const eachNavLink = pages.map((page, index)=>{
+    //         return <li>
+    //             <NavLink 
+    //                 key={index} 
+    //                 to={page} 
+    //                 className={({ isActive }) => (isActive ? "link active" : "link")}
+    //                 >
+    //                     {page}
+    //             </NavLink>
+    //         </li>
+    // })
 
     return (
         <nav className="navbar">
-            <div>
-                <h1 className="name-app">Title Content</h1>
+            <div className="navbar-contain">
+                <p className="nav-logo">Football Static</p>
+                <div>
+                    <ul className="navbar-menu">
+                        <li className="navbar-item">
+                            <NavLink to="/" className={({ isActive }) => (isActive ? "link active" : "link")}>
+                                Home
+                            </NavLink>
+                        </li>
+                        <li className="navbar-item">
+                            <NavLink to="About" className={({ isActive }) => (isActive ? "link active" : "link")}>
+                                About
+                            </NavLink>
+                        </li>
+                        <li className="navbar-item">
+                            <NavLink to="Products" className={({ isActive }) => (isActive ? "link active" : "link")}>
+                                Products
+                            </NavLink>
+                        </li>
+                        <li className="navbar-item">
+                            <NavLink to="Service" className={({ isActive }) => (isActive ? "link active" : "link")}>
+                                Service
+                            </NavLink>
+                        </li>
+                        <li className="navbar-item">
+                            <NavLink to="Login" className={({ isActive }) => (isActive ? "link active" : "link")}>
+                                Login
+                            </NavLink>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div className="nav-link">
+            
+            
+            
 
-                <NavLink to="/" className={({ isActive }) => (isActive ? "link active" : "link")}>
-                    Home
-                </NavLink>
 
-                <div>{eachNavLink}</div>
-
-            </div>
         </nav>
     )
 }
