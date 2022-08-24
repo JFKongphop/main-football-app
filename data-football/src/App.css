@@ -1,10 +1,13 @@
 *{
+  margin: 0;
+  padding: 0;
   font-family: 'Kumbh Sans', sans-serif;
   /* background: ; */
 }
 
+/* navbar control */
 .navbar{
-  background: #000000;
+  /* background: #000000;
   height: 80px;
   justify-content: center;
   align-items: center;
@@ -12,13 +15,20 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  margin-bottom: -20px;
+  margin-bottom: -20px; */
+  background: #131313;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-
-
 .navbar-contain{
-  background: #131313;
+  /* background: #131313;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -27,11 +37,20 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  padding: 0 30px 0 30px;
+  padding: 0 80px 0 80px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
 }
 
 .nav-logo{
-  background-color: #ff8177;
+  /* background-color: #ff8177;
   background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
   background-size: 100%;
   -webkit-background-clip: text;
@@ -43,7 +62,20 @@
   cursor: pointer;
   text-decoration: none;
   font-size: 2.5rem;
-  font-weight: 750;
+  font-weight: 800; */
+  background-color: #ff8177;
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2.3rem;
+  font-weight: 600;
 }
 
 .navbar-menu{
@@ -58,29 +90,128 @@
   margin-right: 30px;
   /* color: #64748b; */
   color: white;
-  transition: all 0.3 ease;
-  width: 500px;
-
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  text-decoration: none;
+  height: 100%;
 }
 
 .link:hover{
-  color: #ff8177;
-  transition: all 0.3 ease;
+  color: #8f0eff;
+}
+
+.active:hover {
+  color: white;
+  transition: all .5s ease;
 }
  
 .active{
-  
+  transition: 0.3s;
   /* color: #645cff; */
-  border-bottom: solid 4.3px #ff8177;
-  padding-bottom: 23px;
+  border-bottom: solid 4.3px #8f0eff;
+  padding-bottom: 12.8px;
 }
 
-
-
+/* all section */
 section{
   color: white;
-  height: 1000px;
+  height: 100%;
   padding: 10px;
-  background: #242424;
+  /* background: #242424; */
+  background: linear-gradient(to right, #161616, #000000);
+
+}
+
+/* ----------------------------------------------------------------------- */
+
+/* home page  */
+.main-page{
+  background: linear-gradient(to right, #161616, #000000);
+  max-width: 100%;
+  padding: 200px 0;
+  padding-bottom: 300px;
+}
+
+.main-page-contain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90%;
+  text-align: center;
+  padding: 30px;
+}
+
+.main-heading{
+  font-size: 100px;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.main-heading span{
+  background: #ee0979;
+  background: -webkit-linear-gradient(
+      to right,
+      #ff6a00,
+      #ee0979);
+  background: linear-gradient(
+      to right,
+      #ff6a00,
+      #ee0979);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.main-description{
+  font-size: 60px;
+  background: #da22ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #9114ff,
+    #da22ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8f0eff,
+    #da22ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.main-btn{
+  font-size: 1.8rem;
+  background: #833ab4;
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  padding: 20px 60px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.35s;
+  outline: none;
+  text-decoration: none;
+}
+
+.main-btn p{
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-decoration: none;
 }
 

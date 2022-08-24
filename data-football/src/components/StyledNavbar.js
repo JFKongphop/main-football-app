@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const StyledNavbar = () =>{
-    const pages = ["About", "Products", "Service", "Login"];
+    const pages = ["Home","About", "Products", "Service", "Login"];
 
     // const eachNavLink = pages.map((page, index)=>{
     //         return <li>
@@ -15,6 +16,7 @@ const StyledNavbar = () =>{
     //         </li>
     // })
 
+    // if want to send propp to Navlink and link must put in this Navlink
     return (
         <nav className="navbar">
             <div className="navbar-contain">

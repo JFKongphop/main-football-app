@@ -1,9 +1,15 @@
 // if want to use each product use this page
 
 import { Link, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import data from "../data";
 
-const SingleProduct = () =>{
+
+const SingleProduct = ({allDataApp}) =>{
+    console.log(allDataApp);
+
+    const [ allData, setAllData ] = useState(null)
+
     // show of eachc product when click of the link below the title
     console.log(useParams());
 
@@ -11,13 +17,14 @@ const SingleProduct = () =>{
     const { productId } = useParams();
 
     // when it.name === productId that show of the image and more data  when click of the link
-    const product = data.find((it)=>it.Name === productId);
-    const { Image, Name } = product; // image and name in data.js
+    const product = allDataApp.find((it)=>it.Name === productId);
+    const { Club, Name } = product; // image and name in data.js
 
     return (
         <section className="section">
-            <img src={Image} alt={Name}/>
+            {/* <img src={Image} alt={Name}/> */}
             <h5>{Name}</h5>
+            <p>{Club}</p>
             <Link to="/products">Back</Link>
         </section>
     )

@@ -4,13 +4,14 @@ import StyledNavbar from "../components/StyledNavbar"
 import { Outlet } from "react-router-dom";
 
 const SharedLayout = () =>{
+
     return (
         <div>
             {/* show nav bar all pages */}
-            <StyledNavbar/>
+            <StyledNavbar />
 
             {/* Outlet to call home page */}
-            <Outlet className="outlet"/>
+            <Outlet />
         </div>
     )
 }

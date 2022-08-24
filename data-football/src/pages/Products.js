@@ -1,21 +1,21 @@
 // use with sharedProductsLayout, sharedProduct and singleProducts
 
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import data from "../data";
 
-const Products = () =>{
-    // show of all product in this page
-    // if want to more info click to the link below
+// prop from App.js
+const Products = ({allDataApp}) =>{
 
     return (
         <section className="section">
             <div className="products">
-                {data.map((it)=>{
-                    return <article key={it.Age}>
+                {allDataApp ? allDataApp.map((it, index)=>{
+                    return <article key={index}>
                         <h5>{it.Name}</h5>
                         <Link to={`/products/${it.Name}`}>more info</Link>
                     </article>
-                })}
+                }) : ""}
             </div>
             <Link to="/" className="btn">Home</Link>
         </section>

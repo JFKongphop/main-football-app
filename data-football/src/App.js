@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './App.css';
 
 // normal page
@@ -20,30 +20,43 @@ import SharedLayout from "./pages/SharedLayout";
 import SharedProductLayout from './pages/SharedProductLayout';
 import SingleProduct from "./pages/SingleProduct";
 
-
- 
 function App() {
   const [ user, setUser ] = useState(null);
+  const [ allDataApp, setAllDataApp ] = useState(null)
+
+  // call api only one time and send prop in App.js
+  useEffect(()=>{
+    const fetchData = async () =>{
+        const res = await fetch("https://player-api2020.jfkongphop.repl.co/data")
+        const player = await res.json()
+        console.log(player);
+        setAllDataApp(player)
+    }
+
+    fetchData()
+
+  },[])
+  
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SharedLayout/>}>
+        <Route path="/" element={<SharedLayout />}>
 
           {/* when click to to the navbat that go to this page
           and go to the path in the route and show of the content */}
-          <Route index element={<Home/>}/>
-          <Route path="About" element={<About/>}/>
-          <Route path="Service" element={<Service/>}/>
+          <Route index element={<Home />}/>
+          <Route path="About" element={<About />}/>
+          <Route path="Service" element={<Service />}/>
           
           {/* if want to use single product*/}
           {/* set this to go to product  */}
-          <Route path="Products" element={<SharedProductLayout/>}>
-            <Route index element={<Products/>}/>
+          <Route path="Products" element={<SharedProductLayout />}>
+            <Route index element={<Products allDataApp={allDataApp}/>}/>
 
-            when click more info that go to this page
-            <Route path=":productId" element={<SingleProduct/>}/>  
+            {/* when click more info that go to this page */}
+            <Route path=":productId" element={<SingleProduct allDataApp={allDataApp}/>}/>  
           </Route>
-          <Route element={<Products/>}/>
+          {/* <Route element={<Products />}/> */}
 
           {/* login page and send user to props go to show name at dashboard */}
           {/* send setUser function to set of the name and email */}
