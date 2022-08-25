@@ -18,7 +18,6 @@ const Login = ({setUser}) =>{
         // if name and email are false that send return blank to stop 
         if(!name || !email) return;
 
-
         // if it true use this to set useState setUser in App.js
         // and go to dashboard to show name
         setUser({name : name, email : email})
