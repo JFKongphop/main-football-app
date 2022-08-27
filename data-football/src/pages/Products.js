@@ -9,13 +9,15 @@ const Products = ({allDataApp}) =>{
 
     return (
         <section className="section">
-            <div className="products">
-                {allDataApp ? allDataApp.map((it, index)=>{
-                    return <article key={index}>
-                        <h5>{it.Name}</h5>
-                        <Link to={`/products/${it.Name}`}>more info</Link>
-                    </article>
-                }) : ""}
+            <div className="flexbox">
+                        {allDataApp ? allDataApp.map((it, index)=>{
+                            return <div className="item" key={index}>
+                                        <article className="content">
+                                            <h5>{it.Name}</h5>
+                                            <Link to={`/products/${it.Name}`}>more info</Link>
+                                        </article>
+                                    </div>
+                        }) : ""}
             </div>
             <Link to="/" className="btn">Home</Link>
         </section>

@@ -4,7 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import data from "../data";
 
-
 const SingleProduct = ({allDataApp}) =>{
     console.log(allDataApp);
 
@@ -53,12 +52,13 @@ const SingleProduct = ({allDataApp}) =>{
             }
         }
 
-        fetchImage()
+        // fetchImage()
     },[])
 
     return (
         <section className="section">
             <img src={playerImage} alt={Name} width="500px" height="300"/>
+
             <h5>{Name}</h5>
             <p>{Club}</p>
             <p>{Age}</p>

@@ -45,7 +45,7 @@ function App() {
           {/* when click to to the navbat that go to this page
           and go to the path in the route and show of the content */}
           <Route index element={<Home />}/>
-          <Route path="About" element={<About />}/>
+          <Route path="About" element={<About path="Products"/>}/>
           <Route path="Service" element={<Service />}/>
           
           {/* if want to use single product*/}

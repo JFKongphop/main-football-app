@@ -20,7 +20,7 @@ const StyledNavbar = () =>{
     return (
         <nav className="navbar">
             <div className="navbar-contain">
-                <p className="nav-logo">Football Static</p>
+                <h1 className="nav-logo">Football Static</h1>
                 <div>
                     <ul className="navbar-menu">
                         <li className="navbar-item">
