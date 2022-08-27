@@ -336,13 +336,9 @@ section{
 }
 
 .profile-logged-in p{
-  margin: 10px;
+  margin: 9.4px;
 }
 
 .login-img{
   border-radius: 50%;
-}
-
-.log{
-  background-color: red;
 }
