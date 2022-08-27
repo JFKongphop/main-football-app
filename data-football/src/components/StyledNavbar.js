@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { id } from "ethers/lib/utils";
 
 const StyledNavbar = () =>{
     const pages = ["Home","About", "Products", "Service", "Login"];
@@ -44,7 +45,7 @@ const StyledNavbar = () =>{
                             </NavLink>
                         </li>
                         <li className="navbar-item">
-                            <NavLink to="Login" className={({ isActive }) => (isActive ? "link active" : "link")}>
+                            <NavLink to="Login" className={({ isActive }) => (isActive ? "link active" : "link")} id="login-link">
                                 Login
                             </NavLink>
                         </li>
