@@ -52,16 +52,8 @@ const Login = ({setUser}) =>{
                     {profile ? (
                         <div className="logged-in">
                             <h3 className="show-login">User Login</h3>
-
                             <h3>User Login</h3>
-                            <br/>
-                            <br/>
-                            <img className="login-img" src={profile.imageUrl} alt="image"/>
-                            <p>Name : {profile.name}</p>
-                            <p>Email : {profile.email}</p>
-                            <br/>
                             <img className="login-img" src={profile.imageUrl} alt={profile.imageUrl}/>
-                            <br/>
                             <p className="show-login">Name : {profile.name}</p>
                             <p className="show-login">Email : {profile.email}</p>
                             <br/>
