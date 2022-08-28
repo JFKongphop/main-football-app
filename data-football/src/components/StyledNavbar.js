@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { id } from "ethers/lib/utils";
 
 const StyledNavbar = () =>{
     const pages = ["Home","About", "Products", "Service", "Login"];
