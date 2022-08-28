@@ -29,7 +29,7 @@ const Login = ({setUser}) =>{
     // checking success after login
     const OnSuccess = (res) =>{
         setProfile(res.profileObj)
-        console.log("success ",res.profileObj);
+        console.log("success ",res.profileObj)
     }
 
     // checking failure after longin
