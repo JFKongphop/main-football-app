@@ -83,6 +83,7 @@
 
 body{
   background: linear-gradient(to right, #161616, #000000);
+  width: 100%;
 }
 
 /* all section */
@@ -189,7 +190,6 @@ body{
 
 /* product page */
 
-
 .search-product{
   margin: 48px 0;
   display: flex;
@@ -216,7 +216,7 @@ body{
   justify-content: flex-start;
   align-items: stretch;
   box-sizing: border-box;
-  margin: 0px -10px;
+  /* margin: 0px -10px; */
 }
 
 .item{
