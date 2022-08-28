@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 const SharedLayout = () =>{
 
     return (
-        <div className="styledNavbar">
+        <div>
             {/* show nav bar all pages */}
             <StyledNavbar />
 

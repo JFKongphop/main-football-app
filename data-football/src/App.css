@@ -372,3 +372,7 @@ body{
 .login-img{
   border-radius: 50%;
 }
+
+.show-login{
+  color: white;
+}
