@@ -245,6 +245,7 @@ body{
   justify-content: center;
   height: 200px;
   padding-top: 30px;
+  border-radius: 5px;
 }
 
 article h4 {
@@ -337,12 +338,22 @@ article h5 {
 }
 
 .chart-player{
+  margin-top: 0;
+  padding-top: 0;
   width: 750px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid red;
+  background-color: white;
+}
+
+.back-product{
+  
+}
+
+.back{
+  text-decoration: none;
 }
 
 /* ----------------------------------------------------------------------- */

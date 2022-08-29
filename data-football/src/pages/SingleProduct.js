@@ -2,7 +2,26 @@
 
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import data from "../data";
+import {
+    Chart as ChartJS,
+    RadialLinearScale,
+    PointElement,
+    LineElement,
+    Filler,
+    Tooltip,
+    Legend,
+  } from 'chart.js';
+import { Radar } from 'react-chartjs-2';
+// import data from "../data";
+
+ChartJS.register(
+    RadialLinearScale,
+    PointElement,
+    LineElement,
+    Filler,
+    Tooltip,
+    Legend
+);
 
 const SingleProduct = ({allDataApp}) =>{
     console.log(allDataApp);
@@ -34,9 +53,34 @@ const SingleProduct = ({allDataApp}) =>{
             Assists,
             Passes_Attempted,
             Perc_Passes_Completed,
+            Penalty_Goals,
+            Penalty_Attempted,
             Yellow_Cards,
             Red_Cards
-        } = product; 
+    } = product; 
+
+    const data = {
+        labels: ['Match Play', 'Minutes', 'Goals', 'Passing Completed', 'Penalty Goals', 'Yellow-Card per match', "Red-Card per match"],
+        datasets: [
+            {
+                label: 'player Stats By Percent',
+                data: [
+                        (Starts / Matches) * 100 , 
+                        (Mins / (Matches * 90)) * 100, 
+                        (Goals / Matches) * 100, 
+                        Perc_Passes_Completed, 
+                        (Penalty_Goals / Penalty_Attempted) * 100,
+                        (Yellow_Cards / Matches) * 100,
+                        (Red_Cards / Matches) * 100
+                    ],
+                backgroundColor: 'rgba(20, 99, 132, 0.2)',
+                borderColor: 'rgb(108, 90, 190)',
+                borderWidth: 2,
+
+            },
+        ],
+    };
+
 
     useEffect(()=>{
         
@@ -116,11 +160,12 @@ const SingleProduct = ({allDataApp}) =>{
                 </div>
 
                 <div className="chart-player">
-                    <div>kongphop</div>
+                    <Radar data={data} className="radar-chart" />
                 </div>
 
             </div>
-            <Link to="/products">Back</Link>
+            <button className="back-product"><Link to="/products" className="back">Back</Link></button>
+            
         </section>
     )
 }
