@@ -8,8 +8,6 @@ const Home = () => {
     return (
         <>
             <section className="section">
-                <h2>Products</h2>
-
                 {/* show data on this page */}
                 <Outlet />
             </section>

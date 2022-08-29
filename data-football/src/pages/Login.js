@@ -52,7 +52,7 @@ const Login = ({setUser}) =>{
                     {profile ? (
                         <div className="logged-in">
                             <h3 className="show-login">User Login</h3>
-                            <h3>User Login</h3>
+                            <br/>
                             <img className="login-img" src={profile.imageUrl} alt={profile.imageUrl}/>
                             <p className="show-login">Name : {profile.name}</p>
                             <p className="show-login">Email : {profile.email}</p>
@@ -65,7 +65,7 @@ const Login = ({setUser}) =>{
                         </div> 
                     ) : (
                         <div className="not-login">
-                            <h3>Login your account</h3>
+                            <h3 className="show-login">Login your account</h3>
                             <br/>
                             <br/>
                             <GoogleLogin

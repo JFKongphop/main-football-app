@@ -22,7 +22,21 @@ const SingleProduct = ({allDataApp}) =>{
     if(allDataApp){
         product = allDataApp.find((it)=>it.Name === productId);
     }
-    const { Club, Name, Age, Position } = product; // image and name in data.js
+    const { Name,
+            Club, 
+            Nationality,
+            Position,
+            Age,
+            Matches,
+            Starts,
+            Mins,
+            Goals,
+            Assists,
+            Passes_Attempted,
+            Perc_Passes_Completed,
+            Yellow_Cards,
+            Red_Cards
+        } = product; 
 
     useEffect(()=>{
         
@@ -44,8 +58,9 @@ const SingleProduct = ({allDataApp}) =>{
             try{
                 const response = await fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=${FullName[0]}%20${FullName[1]}&pageNumber=1&pageSize=10&autoCorrect=true`, options)
                 const image = await response.json()
+                let number = Math.floor(Math.random() * 10);
                 console.log(image.value[1].url);
-                setPlayerImage(image.value[1].url)
+                setPlayerImage(image.value[number].url)
             }
             catch(error){
                 console.log(error);
@@ -57,12 +72,54 @@ const SingleProduct = ({allDataApp}) =>{
 
     return (
         <section className="section">
-            <img src={playerImage} alt={Name} width="500px" height="300"/>
+            <div className="single-product">
 
-            <h5>{Name}</h5>
-            <p>{Club}</p>
-            <p>{Age}</p>
-            <p>{Position}</p>
+                <div className="data-player">
+                    <img className="image-player" src={playerImage} alt={Name}/>
+                    <div className="stat-player">
+
+                        <div className="name-stat">
+                            <h5 className="data">Name</h5>
+                            <p className="data">Club</p>
+                            <p className="data">Nationality</p>
+                            <p className="data">Position</p>
+                            <p className="data">Age</p>
+                            <p className="data">Matches</p>
+                            <p className="data">Starts</p>
+                            <p className="data">Minutes</p>
+                            <p className="data">Goals</p>
+                            <p className="data">Assists</p>
+                            <p className="data">Passes Attempted</p>
+                            <p className="data">Perc Passes Completed</p>
+                            <p className="data">Yellow Cards</p>
+                            <p className="data">Red Cards</p>
+                        </div>
+
+                        <div className="stat">
+                            <h5 className="data">{Name}</h5>
+                            <p className="data">{Club}</p>
+                            <p className="data">{Nationality}</p>
+                            <p className="data">{Position}</p>
+                            <p className="data">{Age}</p>
+                            <p className="data">{Matches}</p>
+                            <p className="data">{Starts}</p>
+                            <p className="data">{Mins}</p>
+                            <p className="data">{Goals}</p>
+                            <p className="data">{Assists}</p>
+                            <p className="data">{Passes_Attempted}</p>
+                            <p className="data">{Perc_Passes_Completed} %</p>
+                            <p className="data">{Yellow_Cards}</p>
+                            <p className="data">{Red_Cards}</p>
+                        </div>
+  
+                    </div>
+                </div>
+
+                <div className="chart-player">
+                    <div>kongphop</div>
+                </div>
+
+            </div>
             <Link to="/products">Back</Link>
         </section>
     )

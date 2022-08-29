@@ -8,7 +8,7 @@ import data from "../data";
 const Products = ({allDataApp}) =>{
 
     const [word, setWord] = useState("")
-    const [dataFilter] = useState(["Name", "Club", "Position"])  
+    const [dataFilter] = useState(["Name", "Club", "Position", "Nationality"])  
 
     const searchPLayer = (players) => {
         return players.filter((item) => {
@@ -36,15 +36,15 @@ const Products = ({allDataApp}) =>{
                             {allDataApp ? searchPLayer(allDataApp).map((it, index)=>{
                                 return <div className="item" key={index}>
                                             <article className="content">
-                                                <h4>{it.Name}</h4>
-                                                <h5>{it.Club}</h5>
-                                                <h5>{it.Position}</h5>
-                                                <Link to={`/products/${it.Name}`} className="more-info">more info</Link>
+                                                <h4 className="each-content">{it.Name}</h4>
+                                                <h5 className="each-content">{it.Club}</h5>
+                                                <h5 className="each-content">{it.Position}</h5>
+                                                <button className="btn-more-info"><Link to={`/products/${it.Name}`} className="more-info">More</Link></button>
                                             </article>
                                         </div>
                             }) : ""}
                 </div>
-                <Link to="/" className="btn">Home</Link>
+                
             </div>
         </section>
     )
